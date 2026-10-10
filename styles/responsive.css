@@ -1,0 +1,40 @@
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  /* Dim background when open */
+  body.sidebar-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 900;
+  }
+
+  /* Ensure header sits on top */
+  .header {
+    position: relative;
+    z-index: 1100;
+  }
+
+  .dashboard-main {
+    padding: 2rem 1rem;
+  }
+
+  main {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  button, .btn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  #progress-container div {
+    height: 20px;
+  }
+}

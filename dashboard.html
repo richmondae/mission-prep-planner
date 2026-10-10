@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-page="dashboard">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Mission Prep Planner</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="styles/dashboard-small.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <!-- Google API and OAuth -->
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://accounts.google.com/gsi/client"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/backpack-icon.png" alt="Logo">
+            <span>Mission Prep Planner</span>
+        </div>
+          </div>
+  <span class="menu-btn" aria-label="Open Menu">&#9776;</span>
+    </header>
+ <div class="dashboard-container">
+
+    <!-- Overlay for mobile menu -->
+  <div class="side-nav-overlay"></div>
+    <!-- Side Nav -->
+    <aside class="side-nav">
+      <nav>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="dashboard.html" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        <a href="goals.html"><i class="fa-solid fa-bullseye"></i> Goals</a>
+        <a href="#tasks-section"><i class="fa-solid fa-list-check"></i> Checklist</a>
+        <a href="#progress-section"><i class="fa-solid fa-chart-line"></i> Progress</a>
+        <a href="resources.html"><i class="fa-solid fa-book"></i> Resources</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      <section id="inspiration-section" class="dashboard-section">
+        <h2>Daily Inspiration</h2>
+        <div id="inspiration-content">
+          <p>Loading today’s scripture or quote...</p>
+        </div>
+      </section>
+
+      <section id="calendar-section" class="dashboard-section">
+        <h2>Google Calendar Sync</h2>
+        <button id="authorizeBtn" class="btn">Connect Google Calendar</button>
+        <button id="signoutBtn" class="btn" style="display:none;">Sign Out</button>
+        <div id="calendarEvents" class="calendar-events"></div>
+      </section>
+
+      <section id="tasks-section" class="dashboard-section">
+        <h2>Today's Checklist</h2>
+        <ul id="tasks-list">
+          <!-- Tasks dynamically generated here -->
+        </ul>
+      </section>
+
+      <section id="progress-section" class="dashboard-section">
+        <h2>Progress Tracker</h2>
+        <div id="progress-container"></div>
+      </section>
+
+      <section id="weekly-analytics" class="dashboard-section">
+        <h2>Weekly Analytics</h2>
+        <div id="analytics-container"></div>
+      </section>
+    </main>
+  </div>
+  <section id="printSummary" style="display:none;">
+  <div class="print-header">
+    <h1>Mission Prep Planner Summary</h1>
+    <p id="printDate"></p>
+  </div>
+
+  <div class="goal-section">
+    <h2>Goals</h2>
+    <div id="printGoals"></div>
+  </div>
+
+  <div class="notes-section">
+    <h2>Notes</h2>
+    <div id="printNotes"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="side-nav-footer">
+    <a href="#" id="exportSummaryLink">Export/Print</a>
+  </div>
+</footer>
+ <script src="scripts/script.js"></script>
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/dashboard.js"></script>
+  <script src="scripts/menu.js"></script>
+    <!-- Your calendar script -->
+  <script src="scripts/calendar.js"></script>
+  
+</body>
+</html>
